@@ -6,4 +6,4 @@ RUN cd / ** \
 tar -xzf site-library.tar.gz && \
 rm site-library.tar.gz
 
-CMD service opencpu restart && less -F /var/log/opencpu/apache_access.log
+CMD service opencpu restart && less +F /var/log/opencpu/apache_access.log

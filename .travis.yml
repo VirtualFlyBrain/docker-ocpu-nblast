@@ -3,7 +3,7 @@ services:
   
 script:
   - docker build -t test-image:test .
-  - docker run -d --name test -p 80:80 -p 8004:8004 -p 443:443 test-image:test
+  - docker run -d -ti --name test -p 80:80 -p 8004:8004 -p 443:443 test-image:test
   - sleep 2m
   - docker logs test
   - curl -sSf http://localhost/ocpu/library/nat/info

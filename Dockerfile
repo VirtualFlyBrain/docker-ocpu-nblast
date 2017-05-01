@@ -8,4 +8,6 @@ COPY startNBLAST.sh /startNBLAST.sh
 
 RUN chmod +x /startNBLAST.sh
 
+COPY server.conf /etc/opencpu/server.conf
+
 CMD /startNBLAST.sh

@@ -1,8 +1,8 @@
 FROM opencpu/base
 
-ADD http://data.virtualflybrain.org/archive/site-library.tar.gz /site-library.tar.gz
+# ADD http://data.virtualflybrain.org/archive/site-library.tar.gz /site-library.tar.gz
 
-ADD http://data.virtualflybrain.org/archive/nblast.tar.gz /nblast.tar.gz
+# ADD http://data.virtualflybrain.org/archive/nblast.tar.gz /nblast.tar.gz
 
 VOLUME /data
 
@@ -14,7 +14,6 @@ RUN chmod +x /startNBLAST.sh
 
 COPY server.conf /etc/opencpu/server.conf
 
-RUN echo 'options(flycircuit.datadir="/data")' >> /etc/opencpu/Rprofile && \
-echo 'options(rgl.useNULL=TRUE)' >> /etc/opencpu/Rprofile
+COPY Rprofile /etc/opencpu/Rprofile
 
 CMD /startNBLAST.sh

@@ -14,7 +14,7 @@ RUN chmod +x /startNBLAST.sh
 
 COPY server.conf /etc/opencpu/server.conf
 
-RUN echo options(flycircuit.datadir="/data") >> /etc/opencpu/Rprofile && \
-echo options(rgl.useNULL=TRUE) >> /etc/opencpu/Rprofile
+RUN echo 'options(flycircuit.datadir="/data")' >> /etc/opencpu/Rprofile && \
+echo 'options(rgl.useNULL=TRUE)' >> /etc/opencpu/Rprofile
 
 CMD /startNBLAST.sh

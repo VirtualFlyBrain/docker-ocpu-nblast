@@ -8,6 +8,8 @@ cd /
 # rm site-library.tar.gz
 # rm nblast.tar.gz
 
+Rscript /loadscript.r
+
 service opencpu restart
 
 less +F /var/log/opencpu/apache_access.log

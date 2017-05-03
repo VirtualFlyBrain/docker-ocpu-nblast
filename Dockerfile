@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y wget git gzip tar less libcurl4-openssl
 
 COPY startNBLAST.sh /startNBLAST.sh
 
-COPY loadScript.r /loadScript.r
+COPY loadScript.R /loadScript.R
 
 RUN chmod +x /startNBLAST.sh
 

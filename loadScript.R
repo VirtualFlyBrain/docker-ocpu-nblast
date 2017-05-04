@@ -1,4 +1,4 @@
-#!R
+#!/usr/bin/env Rscript
 
 install.packages("memoise", repos="https://cloud.r-project.org/")
 install.packages("jsonlite", repos="https://cloud.r-project.org/")

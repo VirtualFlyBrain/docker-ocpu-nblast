@@ -8,7 +8,7 @@ cd /
 # rm site-library.tar.gz
 # rm nblast.tar.gz
 
-Rscript /loadScript.R
+Rscript --vanilla /loadScript.R
 
 service opencpu restart
 

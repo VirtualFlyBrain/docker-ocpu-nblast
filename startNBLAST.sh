@@ -8,7 +8,14 @@ cd /
 # rm site-library.tar.gz
 # rm nblast.tar.gz
 
+chmod -R 777 /data
+
 Rscript --vanilla /loadScript.R
+
+chmod -R 777 /data
+
+chmod -R 777 /usr/local/lib/R/site-library
+chmod -R 777 /usr/lib/R/site-library
 
 service opencpu restart
 

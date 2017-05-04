@@ -8,8 +8,6 @@ VOLUME /data
 
 RUN chmod -R 777 /data
 
-RUN rm -r /usr/lib/R/site-library/*
-
 RUN apt-get update && apt-get install -y wget git gzip tar less libcurl4-openssl-dev libxml2-dev libX11-dev freeglut3 freeglut3-dev r-cran-rgl libglu1-mesa-dev libgl1-mesa-dev xvfb libcairo2-dev rstudio-server
 
 COPY startNBLAST.sh /startNBLAST.sh

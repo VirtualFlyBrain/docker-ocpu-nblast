@@ -17,6 +17,8 @@ chmod -R 777 /data
 chmod -R 777 /usr/local/lib/R/site-library
 chmod -R 777 /usr/lib/R/site-library
 
+rm -r /usr/lib/R/site-library/*
+
 service opencpu restart
 
 less +F /var/log/opencpu/apache_access.log

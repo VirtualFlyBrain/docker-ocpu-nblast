@@ -10,7 +10,7 @@ cd /
 
 chmod -R 777 /data
 
-Rscript --vanilla /loadScript.R
+Rscript /loadScript.R
 
 chmod -R 777 /data
 

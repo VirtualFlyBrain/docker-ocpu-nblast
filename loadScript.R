@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-.libPaths( c( "/usr/lib/opencpu/library", .libPaths()) )
+
 options(flycircuit.datadir="/data")
 options(rgl.useNULL=TRUE)
 install.packages("brew", repos="https://cloud.r-project.org/", dependencies = TRUE)
@@ -13,3 +13,8 @@ devtools::install_github("jefferis/nat", dependencies=TRUE)
 devtools::install_github("jefferis/flycircuit", dependencies=TRUE)
 devtools::install_github("jefferis/flynblastscores", dependencies=TRUE)
 devtools::install_github("jefferis/vfbr", dependencies=TRUE)
+
+ocpubasics = names(installed.packages(lib.loc ="/usr/lib/opencpu/library")[,1])
+userpkgs = names(installed.packages(lib.loc="/usr/local/lib/R/site-library")[,1])
+(dupe_pkgs = userpkgs[ userpkgs %in% ocpubasics])
+remove.packages(dupe_pkgs, lib="/usr/local/lib/R/site-library")

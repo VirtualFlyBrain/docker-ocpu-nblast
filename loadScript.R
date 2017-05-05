@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-
+lib="/usr/lib/opencpu/library"
 options(flycircuit.datadir="/data")
 options(rgl.useNULL=TRUE)
 install.packages("brew", repos="https://cloud.r-project.org/", dependencies = TRUE)

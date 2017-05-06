@@ -19,6 +19,18 @@ chmod -R 777 /usr/lib/R/site-library
 
 rm -r /usr/lib/R/site-library/*
 
+rm -r /usr/lib/opencpu/library/brew
+rm -r /usr/lib/opencpu/library/git2r
+rm -r /usr/lib/opencpu/library/devtools
+rm -r /usr/lib/opencpu/library/jsonlite
+rm -r /usr/lib/opencpu/library/Rcpp
+
+ln -s /usr/local/lib/R/site-library/brew /usr/lib/opencpu/library/brew
+ln -s /usr/local/lib/R/site-library/git2r /usr/lib/opencpu/library/git2r
+ln -s /usr/local/lib/R/site-library/devtools /usr/lib/opencpu/library/devtools
+ln -s /usr/local/lib/R/site-library/jsonlite /usr/lib/opencpu/library/jsonlite
+ln -s /usr/local/lib/R/site-library/Rcpp /usr/lib/opencpu/library/Rcpp
+
 service opencpu restart
 
 less +F /var/log/opencpu/apache_access.log

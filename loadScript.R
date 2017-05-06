@@ -14,7 +14,3 @@ devtools::install_github("jefferis/flycircuit", dependencies=TRUE)
 devtools::install_github("jefferis/flynblastscores", dependencies=TRUE)
 devtools::install_github("jefferis/vfbr", dependencies=TRUE)
 
-# ocpubasics = names(installed.packages(lib.loc ="/usr/lib/opencpu/library")[,1])
-# userpkgs = names(installed.packages(lib.loc="/usr/local/lib/R/site-library")[,1])
-# (dupe_pkgs = userpkgs[ userpkgs %in% ocpubasics])
-# remove.packages(dupe_pkgs, lib="/usr/local/lib/R/site-library")

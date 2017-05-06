@@ -1,4 +1,4 @@
-FROM opencpu/base
+FROM opencpu/rstudio
 
 # ADD http://data.virtualflybrain.org/archive/site-library.tar.gz /site-library.tar.gz
 

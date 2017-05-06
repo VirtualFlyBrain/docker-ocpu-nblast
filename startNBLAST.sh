@@ -35,4 +35,8 @@ ln -s /usr/local/lib/R/site-library/memoise /usr/lib/opencpu/library/memoise
 
 service opencpu restart
 
+sleep 1m
+
+curl -l http://localhost/ocpu/library/flycircuit/R/
+
 less +F /var/log/opencpu/apache_access.log

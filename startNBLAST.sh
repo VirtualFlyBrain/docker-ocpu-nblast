@@ -33,6 +33,8 @@ ln -s /usr/local/lib/R/site-library/jsonlite /usr/lib/opencpu/library/jsonlite
 ln -s /usr/local/lib/R/site-library/Rcpp /usr/lib/opencpu/library/Rcpp
 ln -s /usr/local/lib/R/site-library/memoise /usr/lib/opencpu/library/memoise
 
+rm -r /usr/local/lib/R/site-library/00LOCK-*
+
 service opencpu restart
 
 sleep 1m

@@ -16,6 +16,8 @@ RUN chmod +x /startNBLAST.sh
 
 COPY server.conf /etc/opencpu/server.conf
 
+COPY server.conf /usr/lib/opencpu/library/opencpu/config/defaults.conf
+
 COPY Rprofile /etc/opencpu/Rprofile
 
 CMD /startNBLAST.sh

@@ -6,3 +6,4 @@ script:
   - travis_wait 35 sleep 15m
   - travis_wait 40 docker logs test
   - travis_wait 60 curl -sSf http://localhost/ocpu/library/flycircuit/R/
+  - travis_wait 40 docker logs test

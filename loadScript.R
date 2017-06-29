@@ -11,6 +11,7 @@ pkgTest <- function(x)
 
 options(flycircuit.datadir="/data")
 options(rgl.useNULL=TRUE)
+pkgTest("igraph")
 pkgTest("brew")
 pkgTest("git2r")
 pkgTest("memoise")

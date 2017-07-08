@@ -2,6 +2,7 @@
 
 options(flycircuit.datadir="/data")
 options(rgl.useNULL=TRUE)
+install.packages("Rcpp",repos="https://cloud.r-project.org/", dependencies = TRUE)
 install.packages("igraph",repos="https://cloud.r-project.org/", dependencies = TRUE)
 install.packages("brew",repos="https://cloud.r-project.org/", dependencies = TRUE)
 install.packages("git2r",repos="https://cloud.r-project.org/", dependencies = TRUE)

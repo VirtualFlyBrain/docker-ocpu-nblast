@@ -10,8 +10,8 @@ install.packages("jsonlite",repos="https://cloud.r-project.org/", dependencies =
 install.packages("devtools",repos="https://cloud.r-project.org/", dependencies = TRUE)
 install.packages("ggplot2",repos="https://cloud.r-project.org/", dependencies = TRUE)
 install.packages("rgl",repos="https://cloud.r-project.org/", dependencies = TRUE)
-devtools::install_github("jefferis/nat", dependencies=TRUE)
-devtools::install_github("jefferis/flycircuit", dependencies=TRUE)
-devtools::install_github("jefferis/flynblastscores", dependencies=TRUE)
-devtools::install_github("jefferis/vfbr", dependencies=TRUE)
+devtools::install_github("jefferis/nat", force=TRUE, dependencies=TRUE)
+devtools::install_github("jefferis/flycircuit", force=TRUE, dependencies=TRUE)
+devtools::install_github("jefferis/flynblastscores", force=TRUE, dependencies=TRUE)
+devtools::install_github("jefferis/vfbr", force=TRUE, dependencies=TRUE)
 

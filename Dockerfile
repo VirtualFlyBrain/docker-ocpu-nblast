@@ -1,5 +1,7 @@
 FROM opencpu/base
 
+ENV RGL_USE_NULL=TRUE
+
 VOLUME /data 
 
 VOLUME /usr/local/lib/R/site-library

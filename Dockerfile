@@ -1,5 +1,7 @@
 FROM opencpu/base
 
+COPY limits.conf /etc/security/limits.conf
+
 ENV RGL_USE_NULL=TRUE
 
 VOLUME /data 

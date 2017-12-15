@@ -22,6 +22,8 @@ RUN \
   dpkg-reconfigure locales
 
 ENV RGL_USE_NULL=TRUE
+ENV R_LIBS_USER=/usr/local/lib/R/site-library/
+
 
 VOLUME /data 
 

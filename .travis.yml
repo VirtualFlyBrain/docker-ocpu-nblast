@@ -3,7 +3,7 @@ dist: trusty
 script:
   - docker build -t test-image:test .
   - travis_wait 190 docker run -d -ti --name test -p 80:80 -p 8004:8004 -p 443:443 test-image:test
-  - travis_wait 35 sleep 35m
+  - travis_wait 35 sleep 10m
   - travis_wait 40 docker logs test
   - travis_wait 60 curl -sSf http://localhost/ocpu/library/flycircuit/R/
   - travis_wait 40 docker logs test

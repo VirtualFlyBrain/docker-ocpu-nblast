@@ -30,7 +30,7 @@ VOLUME /usr/local/lib/R/site-library
 RUN chmod -R 777 /data && chmod -R 777 /usr/local/lib/R/site-library
 
 RUN dpkg --add-architecture i386 && \
-apt-apt update && \
+apt-get update && \
 add-apt-repository ppa:marutter/rrutter -y && \
 add-apt-repository ppa:marutter/c2d4u -y && \
 apt-get update && \

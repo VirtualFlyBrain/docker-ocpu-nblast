@@ -29,7 +29,13 @@ VOLUME /usr/local/lib/R/site-library
 
 RUN chmod -R 777 /data && chmod -R 777 /usr/local/lib/R/site-library
 
-RUN dpkg --add-architecture i386 && apt-get -dd update && apt-get install -y software-properties-common wget git gzip tar less curl libcurl4-openssl-dev libxml2-dev libx11-dev freeglut3 freeglut3-dev r-cran-rgl libglu1-mesa-dev libgl1-mesa-dev xvfb libcairo2-dev libmagick++-dev libpoppler-cpp-dev libwebp-dev libssh2-1-dev libreadline-dev cmtk libblas-dev liblapack-dev
+RUN dpkg --add-architecture i386 && \
+add-apt-repository ppa:marutter/rrutter -y && \
+add-apt-repository ppa:marutter/c2d4u -y && \
+apt-get update && \
+apt-get install -y r-cran-rcpp r-cran-igraph r-cran-brew r-cran-git2r r-cran-memoise r-cran-jsonlite r-cran-devtools r-cran-ggplot2 r-cran-rgl
+
+RUN dpkg --add-architecture i386 && apt-get -dd update && apt-get install -y software-properties-common wget git gzip tar less curl libcurl4-openssl-dev libxml2-dev libx11-dev freeglut3 freeglut3-dev libglu1-mesa-dev libgl1-mesa-dev xvfb libcairo2-dev libmagick++-dev libpoppler-cpp-dev libwebp-dev libssh2-1-dev libreadline-dev cmtk libblas-dev liblapack-dev
 
 COPY startNBLAST.sh /startNBLAST.sh
 

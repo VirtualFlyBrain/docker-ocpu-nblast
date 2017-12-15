@@ -24,6 +24,7 @@ RUN \
 ENV RGL_USE_NULL=TRUE
 ENV R_LIBS_USER=/usr/local/lib/R/site-library/
 
+RUN echo "R_LIBS_USER='/usr/local/lib/R/site-library'" > /home/opencpu/.Renviron
 
 VOLUME /data 
 

@@ -28,8 +28,6 @@ RUN echo "R_LIBS_USER='/usr/local/lib/R/site-library'" > /home/opencpu/.Renviron
 
 VOLUME /data 
 
-VOLUME /usr/local/lib/R/site-library
-
 RUN chmod -R 777 /data && chmod -R 777 /usr/local/lib/R/site-library
 
 RUN dpkg --add-architecture i386 && \

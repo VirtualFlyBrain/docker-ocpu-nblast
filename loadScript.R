@@ -1,6 +1,8 @@
 #!/usr/bin/env Rscript
 
 .libPaths()
+.libPaths( c( .libPaths(), "/usr/local/lib/opencpu/site-library") )
+.libPaths( c( .libPaths(), "/usr/lib/opencpu/library") )
 options(flycircuit.datadir="/data")
 options(rgl.useNULL=TRUE)
 if (!require("Rcpp")) install.packages("Rcpp",repos="https://cloud.r-project.org/", dependencies = TRUE)

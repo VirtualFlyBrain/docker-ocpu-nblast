@@ -41,7 +41,10 @@ r-cran-bigmemory r-cran-bit r-cran-ff r-cran-testthat r-cran-praise r-cran-cli r
 r-cran-rvcg r-cran-rcpparmadillo r-cran-rmarkdown r-cran-rprojroot r-cran-backports r-cran-yaml r-cran-rcppeigen \
 r-cran-nabor r-cran-filehash r-cran-digest r-cran-htmlwidgets
 
-RUN dpkg --add-architecture i386 && apt-get -qq -dd update && apt-get -qq install -y software-properties-common wget git gzip tar less curl libcurl4-openssl-dev libxml2-dev libx11-dev freeglut3 freeglut3-dev libglu1-mesa-dev libgl1-mesa-dev xvfb libcairo2-dev libmagick++-dev libpoppler-cpp-dev libwebp-dev libssh2-1-dev libreadline-dev cmtk libblas-dev liblapack-dev
+RUN dpkg --add-architecture i386 && apt-get -qq -dd update && apt-get -qq install -y software-properties-common wget \
+git gzip tar less curl libcurl4-openssl-dev libxml2-dev libx11-dev freeglut3 freeglut3-dev libglu1-mesa-dev \
+libgl1-mesa-dev xvfb libcairo2-dev libmagick++-dev libpoppler-cpp-dev libwebp-dev libssh2-1-dev libreadline-dev cmtk \
+libblas-dev liblapack-dev tree
 
 COPY startNBLAST.sh /startNBLAST.sh
 

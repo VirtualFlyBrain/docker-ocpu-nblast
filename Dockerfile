@@ -59,4 +59,6 @@ COPY server.conf /usr/lib/opencpu/library/opencpu/config/defaults.conf
 
 COPY Rprofile /etc/opencpu/Rprofile
 
+RUN chmod -R 777 /usr/local/lib/R/site-library
+
 CMD /startNBLAST.sh

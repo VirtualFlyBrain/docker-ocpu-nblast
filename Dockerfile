@@ -36,7 +36,7 @@ apt-get -qq update && \
 add-apt-repository ppa:marutter/rrutter -y && \
 add-apt-repository ppa:marutter/c2d4u -y && \
 apt-get -qq update && \
-apt-get -qq install -y r-cran-igraph r-cran-brew r-cran-git2r r-cran-memoise r-cran-jsonlite r-cran-devtools \
+apt-get -qq install -y r-cran-brew r-cran-git2r r-cran-memoise r-cran-jsonlite r-cran-devtools \
 r-cran-ggplot2 r-cran-rgl r-cran-xml r-cran-selectr r-cran-xml2 r-cran-rvest r-cran-apcluster r-cran-bigmemory.sri \
 r-cran-bigmemory r-cran-bit r-cran-ff r-cran-testthat r-cran-praise r-cran-cli r-cran-crayon r-cran-assertthat \
 r-cran-rvcg r-cran-rcpparmadillo r-cran-rmarkdown r-cran-rprojroot r-cran-backports r-cran-yaml r-cran-rcppeigen \

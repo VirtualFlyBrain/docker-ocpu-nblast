@@ -35,11 +35,11 @@ apt-get -qq update && \
 add-apt-repository ppa:marutter/rrutter -y && \
 add-apt-repository ppa:marutter/c2d4u -y && \
 apt-get -qq update && \
-apt-get -qq install -y r-cran-rcpp r-cran-igraph r-cran-brew r-cran-git2r r-cran-memoise r-cran-jsonlite r-cran-devtools \
+apt-get -qq install -y r-cran-igraph r-cran-brew r-cran-git2r r-cran-memoise r-cran-jsonlite r-cran-devtools \
 r-cran-ggplot2 r-cran-rgl r-cran-xml r-cran-selectr r-cran-xml2 r-cran-rvest r-cran-apcluster r-cran-bigmemory.sri \
 r-cran-bigmemory r-cran-bit r-cran-ff r-cran-testthat r-cran-praise r-cran-cli r-cran-crayon r-cran-assertthat \
 r-cran-rvcg r-cran-rcpparmadillo r-cran-rmarkdown r-cran-rprojroot r-cran-backports r-cran-yaml r-cran-rcppeigen \
-r-cran-nabor r-cran-filehash r-cran-digest r-cran-htmlwidgets
+r-cran-nabor r-cran-filehash r-cran-digest r-cran-htmlwidgets r-cran-rcurl r-cran-bitops r-cran-spam
 
 RUN dpkg --add-architecture i386 && apt-get -qq -dd update && apt-get -qq install -y software-properties-common wget \
 git gzip tar less curl libcurl4-openssl-dev libxml2-dev libx11-dev freeglut3 freeglut3-dev libglu1-mesa-dev \

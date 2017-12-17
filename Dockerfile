@@ -23,6 +23,7 @@ RUN \
 
 ENV RGL_USE_NULL=TRUE
 ENV R_LIBS_USER=/usr/local/lib/R/site-library/
+ENV R_LIBS=/usr/local/lib/R/site-library/
 
 RUN echo "R_LIBS_USER='/usr/local/lib/R/site-library'" > /home/opencpu/.Renviron
 

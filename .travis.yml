@@ -5,9 +5,9 @@ script:
   - docker build -t test-image:test .
   - echo -e "travis_fold:end:docker-build"
   - travis_wait 190 docker run -d -ti --name test -p 80:80 -p 8004:8004 -p 443:443 test-image:test
-  - sleep 10m
+  - travis_wait 12 sleep 10m
   - docker logs test 
-  - sleep 5m
+  - travis_wait 12 sleep 5m
   - docker logs --since 6m test 
   - travis_wait 60 curl -sSf http://localhost/ocpu/library/flycircuit/R/
   - docker logs --since 2m test 

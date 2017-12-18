@@ -50,4 +50,8 @@ COPY Rprofile /etc/opencpu/Rprofile
 
 RUN chmod -R 777 /usr/local/lib/R/site-library
 
+RUN Rscript /loadScript.R
+
+RUN chmod -R 777 /usr/local/lib/R/site-library
+
 CMD /startNBLAST.sh

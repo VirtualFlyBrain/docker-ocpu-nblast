@@ -5,7 +5,7 @@ script:
   - docker build -t test-image:test .
   - echo -e "travis_fold:end:docker-build"
   - travis_wait 190 docker run -d -ti --name test -p 80:80 -p 8004:8004 -p 443:443 test-image:test
-  - sleep 5m
+  - sleep 10m
   - docker logs test 
   - sleep 5m
   - docker logs --since 6m test 

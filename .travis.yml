@@ -26,7 +26,7 @@ script:
   - |
     while [ $(docker logs test | grep 'OpenCPU Cloud Server' | wc -l) -lt 1 ]; do 
       sleep 30s
-      docker logs --tail 5 test 
+      docker logs --tail 1 test 
     done
   - echo -e "travis_fold:end:NBLAST-boot"
   - travis_wait 60 curl -sSf http://localhost/ocpu/library/flycircuit/R/

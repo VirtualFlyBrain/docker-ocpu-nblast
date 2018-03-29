@@ -19,8 +19,9 @@ chmod -R 777 /usr/lib/R/site-library
 
 rm -r /usr/local/lib/R/site-library/00LOCK-*
 
-echo "${RSTUDIO_PASS}" | passwd ${RSTUDIO_USER} --stdin
-
-rstudio-server start
+if [ "$ENABLED" == "rstudio" ]; then 
+  echo "${RSTUDIO_PASS}" | passwd ${RSTUDIO_USER} --stdin 
+  rstudio-server start
+fi
 
 apachectl -DFOREGROUND

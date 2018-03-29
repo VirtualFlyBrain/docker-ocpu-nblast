@@ -21,9 +21,9 @@ script:
   - travis_wait 190 docker run -d -ti --name test -p 80:80 -p 8004:8004 -p 443:443 $REPO:$COMMIT
   - travis_wait 12 sleep 2m
   - docker logs test 
-  - |
+  - travis_wait 190 |
     while [ $(docker logs test | grep OpenCPU Cloud Server | wc -l) -lt 1 ]; do 
-      travis_wait 12 sleep 2m
+      sleep 2m
       docker logs --since 3m test 
     done
   - echo -e "travis_fold:end:NBLAST-boot"

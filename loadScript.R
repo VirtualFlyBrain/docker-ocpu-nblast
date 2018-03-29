@@ -23,3 +23,4 @@ if (!require("nat")) devtools::install_github("jefferis/nat", dependencies=TRUE,
 if (!require("vfbr")) devtools::install_github("jefferis/vfbr", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("flycircuit")) devtools::install_github("jefferis/flycircuit", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("flynblastscores")) devtools::install_github("jefferis/flynblastscores", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
+if (!require("elmr")) devtools::source_gist("fdd1e5b6e009ff49e66be466a104fd92", filename = "install_flyconnectome_all.R")

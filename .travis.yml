@@ -18,8 +18,8 @@ script:
   - echo -e "travis_fold:start:docker-build"
   - export REPO=$(echo ${TRAVIS_REPO_SLUG} | awk '{gsub(/\./,"_",$0);print tolower($0)}')
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
-  - if [ "$ENABLED" == "-rstudio" ]; then sed -i "s|FROM opencpu/.*|FROM opencpu/rstudio|" Dockerfile; else sed -i "s|FROM opencpu/.*|FROM opencpu/base|" Dockerfile; fi
-  - travis_wait 190 docker build -t $REPO:$COMMIT --env=ENABLED=${ENABLED/-/} .
+  - if [ "$ENABLED" == "-rstudio" ]; then sed -i "s|FROM opencpu/.*|FROM opencpu/rstudio|" Dockerfile; sed -i "s|ENV ENABLED=.*|ENV ENABLED=rstudio|" Dockerfile; else sed -i "s|FROM opencpu/.*|FROM opencpu/base|" Dockerfile;sed -i "s|ENV ENABLED=.*|ENV ENABLED=|" Dockerfile; fi
+  - travis_wait 190 docker build -t $REPO:$COMMIT .
   - echo -e "travis_fold:end:docker-build"
   - echo -e "travis_fold:start:NBLAST-boot"
   - travis_wait 190 docker run -d -ti --name test -p 80:80 -p 8004:8004 -p 443:443 $REPO:$COMMIT

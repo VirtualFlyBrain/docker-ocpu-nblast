@@ -2,6 +2,9 @@ FROM opencpu/rstudio
 
 COPY limits.conf /etc/security/limits.conf
 
+ENV RSTUDIO_USER=user
+ENV RSTUDIO_PASS=password
+
 # Configure environment
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG=en_US.UTF-8
@@ -15,11 +18,10 @@ ENV LC_NUMERIC=en_US.UTF-8
 ENV LC_TIME=en_US.UTF-8
 
 # Install.
-RUN \
-  echo 'LC_ALL=en_US.UTF-8' >>  /etc/default/locale && \
-  echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && \
-  locale-gen en_US.UTF-8 && \
-  dpkg-reconfigure locales
+RUN echo 'LC_ALL=en_US.UTF-8' >>  /etc/default/locale && \
+echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen && \
+locale-gen en_US.UTF-8 && \
+dpkg-reconfigure locales
 
 ENV RGL_USE_NULL=TRUE
 ENV R_LIBS_USER=/usr/local/lib/R/site-library/

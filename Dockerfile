@@ -2,6 +2,7 @@ FROM opencpu/rstudio
 
 COPY limits.conf /etc/security/limits.conf
 
+ENV ENABLED=rstudio
 ENV RSTUDIO_USER=user
 ENV RSTUDIO_PASS=password
 

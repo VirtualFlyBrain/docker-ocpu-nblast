@@ -1,4 +1,4 @@
-FROM opencpu/rstudio
+FROM opencpu/base
 
 COPY limits.conf /etc/security/limits.conf
 

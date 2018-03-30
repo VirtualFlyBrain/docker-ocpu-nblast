@@ -30,9 +30,7 @@ if [ "$ENABLED" == "rstudio" ]; then
   echo "${RSTUDIO_USER}:${RSTUDIO_PASS}" | xargs chpasswd
   rstudio-server start
   if [ "${FASTBOOT}" == "false" ]; then
-    su ${RSTUDIO_USER}
-    Rscript /loadScript.R
-    exit
+    su -c 'Rscript /loadScript.R' - ${RSTUDIO_USER}
   fi
 fi
 

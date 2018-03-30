@@ -45,6 +45,7 @@ COPY startNBLAST.sh /startNBLAST.sh
 
 COPY loadScript.R /loadScript.R
 COPY buildScript.R /buildScript.R
+COPY bootScript.R /bootScript.R
 
 RUN chmod +x /startNBLAST.sh
 

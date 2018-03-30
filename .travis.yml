@@ -22,7 +22,7 @@ script:
   - travis_wait 190 docker build -t $REPO:$COMMIT .
   - echo -e "travis_fold:end:docker-build"
   - echo -e "travis_fold:start:NBLAST-boot"
-  - travis_wait 190 docker run -d -ti --name test -p 80:80 -p 8004:8004 -p 443:443 $REPO:$COMMIT
+  - travis_wait 190 docker run -d -ti --name test -p 80:80 -p 8004:8004 -p 443:443 --env=FASTBOOT=true $REPO:$COMMIT
   - |
     while [ $(docker logs test | grep 'OpenCPU' | wc -l) -lt 1 ]; do 
       sleep 30s

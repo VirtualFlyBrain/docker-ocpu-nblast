@@ -1,14 +1,12 @@
 #!/bin/bash
 
 cd /
-# wget http://data.virtualflybrain.org/archive/site-library.tar.gz
-# wget http://data.virtualflybrain.org/archive/nblast.tar.gz
-# tar -xzf site-library.tar.gz
-# tar -xzf nblast.tar.gz
-# rm site-library.tar.gz
-# rm nblast.tar.gz
+
+mkdir -p /home/${RSTUDIO_USER}
 
 chmod -R 777 /data
+
+chmod -R 777 /home/${RSTUDIO_USER}
 
 ln -s /data /root/.local
 ln -s /data /home/opencpu/.local

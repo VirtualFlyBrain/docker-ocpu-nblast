@@ -19,10 +19,10 @@ script:
   - export REPO=$(echo ${TRAVIS_REPO_SLUG} | awk '{gsub(/\./,"_",$0);print tolower($0)}')
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
   - if [ "$ENABLED" == "-rstudio" ]; then sed -i "s|FROM opencpu/.*|FROM opencpu/rstudio|" Dockerfile; sed -i "s|ENV ENABLED=.*|ENV ENABLED=rstudio|" Dockerfile; else sed -i "s|FROM opencpu/.*|FROM opencpu/base|" Dockerfile;sed -i "s|ENV ENABLED=.*|ENV ENABLED=|" Dockerfile; fi
-  - travis_wait 190 docker build -t $REPO:$TAG$ENABLED .
+  - travis_wait 190 docker build -t $REPO:$COMMIT .
   - echo -e "travis_fold:end:docker-build"
   - echo -e "travis_fold:start:NBLAST-boot"
-  - travis_wait 190 docker run -d -ti --name test -p 80:80 -p 8004:8004 -p 443:443 --env=FASTBOOT=true $REPO:$TAG$ENABLED
+  - travis_wait 190 docker run -d -ti --name test -p 80:80 -p 8004:8004 -p 443:443 --env=FASTBOOT=true $REPO:$COMMIT
   - |
     while [ $(docker logs test | grep 'OpenCPU' | wc -l) -lt 1 ]; do 
       sleep 30s
@@ -31,8 +31,9 @@ script:
   - echo -e "travis_fold:end:NBLAST-boot"
   - travis_wait 60 curl -sSf http://localhost/ocpu/library/flycircuit/R/
   - docker logs --since 2m test 
-
+  
 after_success:
   - cd $TRAVIS_BUILD_DIR
+  - docker tag $REPO:$COMMIT $REPO:$TAG$ENABLED
   - docker login -u $DOCKER_USER -p $DOCKER_PASS
   - docker push $REPO:$TAG$ENABLED

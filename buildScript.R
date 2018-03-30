@@ -15,5 +15,3 @@ if(!require("devtools")) install.packages("devtools")
 devtools::source_gist("39a1182f726989db7e03", filename="install_all_nat.R")
 # elmr will bring in all the other packages we need
 devtools::install_github("jefferis/elmr", dependencies=TRUE)
-message("Setting up flycircuit dataset including pre-computed NBLAST scores")
-devtools::source_gist("bbaf5d53353b3944c090", filename = "FlyCircuitStartupNat.R")

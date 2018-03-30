@@ -15,7 +15,7 @@ ln -s /data /home/${RSTUDIO_USER}/.local
 if [ "${FASTBOOT}" == "false" ]; then
   Rscript /loadScript.R
 else
-  Rscript /buildScript.R
+  Rscript /bootScript.R
 fi
 
 chmod -R 777 /data

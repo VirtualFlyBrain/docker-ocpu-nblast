@@ -23,6 +23,9 @@ if [ "$ENABLED" == "rstudio" ]; then
   adduser ${RSTUDIO_USER} --gecos "rstudio,,," --disabled-password
   echo "${RSTUDIO_USER}:${RSTUDIO_PASS}" | xargs chpasswd
   rstudio-server start
+  su ${RSTUDIO_USER}
+  Rscript /loadScript.R
+  exit
 fi
 
 apachectl -DFOREGROUND

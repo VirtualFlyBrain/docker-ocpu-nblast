@@ -37,3 +37,4 @@ if [ "$ENABLED" == "rstudio" ]; then
 fi
 
 apachectl -DFOREGROUND
+

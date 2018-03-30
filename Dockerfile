@@ -6,6 +6,8 @@ ENV ENABLED=rstudio
 ENV RSTUDIO_USER=user
 ENV RSTUDIO_PASS=password
 
+ENV FASTBOOT=false
+
 # Configure environment
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG=en_US.UTF-8

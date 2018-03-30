@@ -12,7 +12,11 @@ ln -s /data /root/.local
 ln -s /data /home/opencpu/.local
 ln -s /data /home/${RSTUDIO_USER}/.local
 
-Rscript /loadScript.R
+if [ "${FASTBOOT}" == "false" ]; then
+  Rscript /loadScript.R
+else
+  Rscript /buildScript.R
+fi
 
 chmod -R 777 /data
 
@@ -25,9 +29,11 @@ if [ "$ENABLED" == "rstudio" ]; then
   adduser ${RSTUDIO_USER} --gecos "rstudio,,," --disabled-password
   echo "${RSTUDIO_USER}:${RSTUDIO_PASS}" | xargs chpasswd
   rstudio-server start
-  su ${RSTUDIO_USER}
-  Rscript /loadScript.R
-  exit
+  if [ "${FASTBOOT}" == "false" ]; then
+    su ${RSTUDIO_USER}
+    Rscript /loadScript.R
+    exit
+  fi
 fi
 
 apachectl -DFOREGROUND

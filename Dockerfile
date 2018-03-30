@@ -56,6 +56,10 @@ COPY Rprofile /etc/opencpu/Rprofile
 
 RUN chmod -R 777 /usr/local/lib/R/site-library
 
+Rscript /buildScript.R
+
+RUN chmod -R 777 /usr/local/lib/R/site-library
+
 RUN if [ "$ENABLED" == "rstudio" ]; then echo "server-app-armor-enabled=0" >> /etc/rstudio/rserver.conf; fi 
 
 CMD /startNBLAST.sh

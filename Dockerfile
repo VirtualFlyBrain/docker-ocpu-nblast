@@ -44,6 +44,7 @@ libblas-dev liblapack-dev tree grep
 COPY startNBLAST.sh /startNBLAST.sh
 
 COPY loadScript.R /loadScript.R
+COPY buildScript.R /buildScript.R
 
 RUN chmod +x /startNBLAST.sh
 

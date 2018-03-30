@@ -10,6 +10,10 @@ cd /
 
 chmod -R 777 /data
 
+ln -s /data /root/.local
+ln -s /data /home/opencpu/.local
+ln -s /data /home/${RSTUDIO_USER}/.local
+
 Rscript /loadScript.R
 
 chmod -R 777 /data

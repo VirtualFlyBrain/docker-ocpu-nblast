@@ -57,7 +57,7 @@ COPY Rprofile /etc/opencpu/Rprofile
 
 RUN chmod -R 777 /usr/local/lib/R/site-library
 
-Rscript /buildScript.R
+RUN Rscript /buildScript.R
 
 RUN chmod -R 777 /usr/local/lib/R/site-library
 

@@ -18,6 +18,7 @@ script:
   - echo -e "travis_fold:start:docker-build"
   - export REPO=$(echo ${TRAVIS_REPO_SLUG} | awk '{gsub(/\./,"_",$0);print tolower($0)}')
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+  - sed -i "s|RUN Rscript /loadScript.R||" Dockerfile
   - if [ "$ENABLED" == "-rstudio" ]; then sed -i "s|FROM opencpu/.*|FROM opencpu/rstudio|" Dockerfile; sed -i "s|ENV ENABLED=.*|ENV ENABLED=rstudio|" Dockerfile; else sed -i "s|FROM opencpu/.*|FROM opencpu/base|" Dockerfile;sed -i "s|ENV ENABLED=.*|ENV ENABLED=|" Dockerfile; fi
   - travis_wait 190 docker build -t $REPO:$COMMIT .
   - echo -e "travis_fold:end:docker-build"

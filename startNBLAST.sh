@@ -8,6 +8,8 @@ chmod -R 777 /data
 
 chmod -R 777 /home/${RSTUDIO_USER}
 
+rm -r /usr/local/lib/R/site-library/00LOCK-*
+
 ln -s /data /root/.local
 ln -s /data /home/opencpu/.local
 ln -s /data /home/${RSTUDIO_USER}/.local
@@ -30,6 +32,8 @@ if [ "$ENABLED" == "rstudio" ]; then
   echo "${RSTUDIO_USER}:${RSTUDIO_PASS}" | xargs chpasswd
   rstudio-server start
 fi
+
+rm -r /usr/local/lib/R/site-library/00LOCK-*
 
 apachectl -DFOREGROUND
 

@@ -29,7 +29,7 @@ rm -r /usr/local/lib/R/site-library/00LOCK-*
 
 if [ "$ENABLED" == "rstudio" ]; then 
   adduser ${RSTUDIO_USER} --gecos "rstudio,,," --disabled-password
-  echo "${RSTUDIO_USER}:${RSTUDIO_PASS}" | xargs chpasswd
+  echo "${RSTUDIO_USER}:${RSTUDIO_PASS}" | chpasswd
   rstudio-server start
 fi
 

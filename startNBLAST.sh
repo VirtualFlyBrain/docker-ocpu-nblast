@@ -10,9 +10,9 @@ chmod -R 777 /home/${RSTUDIO_USER}
 
 rm -r /usr/local/lib/R/site-library/00LOCK-*
 
-ln -s /data /root/.local
-ln -s /data /home/opencpu/.local
-ln -s /data /home/${RSTUDIO_USER}/.local
+if [ !-e /root/.local ]; then ln -s /data /root/.local; fi
+if [ !-e /home/opencpu/.local ]; then ln -s /data /home/opencpu/.local; fi
+if [ !-e /home/${RSTUDIO_USER}/.local ]; then ln -s /data /home/${RSTUDIO_USER}/.local; fi
 
 if [ "${FASTBOOT}" == "false" ]; then
   Rscript /loadScript.R

@@ -38,8 +38,6 @@ libblas-dev liblapack-dev tree libudunits2-dev
 
 COPY startNBLAST.sh /startNBLAST.sh
 
-COPY loadScript.R /loadScript.R
-
 RUN chmod +x /startNBLAST.sh
 
 COPY server.conf /etc/opencpu/server.conf
@@ -49,6 +47,8 @@ COPY server.conf /usr/lib/opencpu/library/opencpu/config/defaults.conf
 COPY Rprofile /etc/opencpu/Rprofile
 
 RUN chmod -R 777 /usr/local/lib/R/site-library
+
+COPY loadScript.R /loadScript.R
 
 RUN Rscript /loadScript.R || true
 

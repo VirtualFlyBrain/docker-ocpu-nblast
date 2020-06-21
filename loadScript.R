@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-
+Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS = TRUE)
 .libPaths()
 .libPaths( c( "/usr/local/lib/R/site-library") )
 .libPaths( c( .libPaths(), "/usr/lib/R/library") )

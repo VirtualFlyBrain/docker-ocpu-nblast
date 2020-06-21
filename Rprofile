@@ -10,3 +10,4 @@
 .libPaths()
 options(flycircuit.datadir="/data")
 options(rgl.useNULL=TRUE)
+Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS = TRUE)

@@ -1,4 +1,4 @@
-FROM opencpu/base
+FROM opencpu/base:2.1.6
 
 COPY limits.conf /etc/security/limits.conf
 

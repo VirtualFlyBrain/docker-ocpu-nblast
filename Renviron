@@ -9,3 +9,8 @@ R_REMOTES_STANDALONE=true
 
 # This prevents warnings from blocking install
 R_REMOTES_NO_ERRORS_FROM_WARNINGS = TRUE
+
+RGL_USE_NULL=TRUE
+R_LIBS_USER='/usr/local/lib/R/site-library/'
+R_LIBS='/usr/local/lib/R/site-library/'
+

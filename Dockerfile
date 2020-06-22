@@ -1,4 +1,4 @@
-FROM opencpu/base:2.1.6
+FROM opencpu/base:2.1.7
 
 COPY limits.conf /etc/security/limits.conf
 
@@ -45,6 +45,8 @@ COPY server.conf /etc/opencpu/server.conf
 COPY server.conf /usr/lib/opencpu/library/opencpu/config/defaults.conf
 
 COPY Rprofile /etc/opencpu/Rprofile
+
+COPY Renviron /etc/opencpu/Renviron
 
 RUN chmod -R 777 /usr/local/lib/R/site-library
 

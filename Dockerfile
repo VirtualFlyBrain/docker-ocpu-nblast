@@ -48,7 +48,7 @@ RUN chmod -R 777 /usr/local/lib/R/site-library
 
 COPY loadScript.R /loadScript.R
 
-RUN ln -s /root/.local/share/rpkg-flycircuit/data /data
+RUN mkdir /data
 
 RUN chmod -R 777 /data
 

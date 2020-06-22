@@ -1,0 +1,16 @@
+## Set environment variables in OpenCPU server. See help(Startup).
+## This file is read *after* R is initialized.
+## Variables in /etc/R/environ are read *before* R is initialized.
+# Example:
+# GITHUB_PAT=aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
+
+# This makes that install_github() does not use curl/pkgbuild
+R_REMOTES_STANDALONE=true
+
+# This prevents warnings from blocking install
+R_REMOTES_NO_ERRORS_FROM_WARNINGS = TRUE
+
+RGL_USE_NULL=TRUE
+R_LIBS_USER='/usr/local/lib/R/site-library/'
+R_LIBS='/usr/local/lib/R/site-library/'
+

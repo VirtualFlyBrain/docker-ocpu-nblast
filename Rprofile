@@ -8,7 +8,7 @@
 .libPaths( c( .libPaths(), "/usr/lib/opencpu/library") )
 .libPaths( c( .libPaths(), "/usr/lib/opencpu/site-library") )
 .libPaths()
-options(flycircuit.datadir="/data")
+options(flycircuit.datadir="/usr/local/lib/R/site-library/flycircuit/data")
 options(rgl.useNULL=TRUE)
 Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS = TRUE)
 if (!require("Rcpp")) install.packages("Rcpp",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")

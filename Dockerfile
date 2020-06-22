@@ -52,7 +52,11 @@ RUN mkdir /data
 
 RUN chmod -R 777 /data
 
+USER www-data
+
 RUN Rscript /loadScript.R || true
+
+USER root
 
 RUN chmod -R 777 /data
 

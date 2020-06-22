@@ -8,6 +8,7 @@
 .libPaths( c( .libPaths(), "/usr/lib/opencpu/library") )
 .libPaths( c( .libPaths(), "/usr/lib/opencpu/site-library") )
 .libPaths()
+options(flycircuit.ffdir="/usr/local/lib/R/site-library/flycircuit/data/ff")
 options(flycircuit.datadir="/usr/local/lib/R/site-library/flycircuit/data")
 options(rgl.useNULL=TRUE)
 Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS = TRUE)

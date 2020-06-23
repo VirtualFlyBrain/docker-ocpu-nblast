@@ -10,6 +10,7 @@
 .libPaths()
 options(flycircuit.datadir="/data")
 options(rgl.useNULL=TRUE)
+Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS = TRUE)
 if (!require("Rcpp")) install.packages("Rcpp",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("igraph")) install.packages("igraph",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("brew")) install.packages("brew",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")

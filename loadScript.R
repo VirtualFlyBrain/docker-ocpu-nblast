@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-
+Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS = TRUE)
 .libPaths()
 .libPaths( c( "/usr/local/lib/R/site-library") )
 .libPaths( c( .libPaths(), "/usr/lib/R/library") )
@@ -9,7 +9,10 @@
 .libPaths( c( .libPaths(), "/usr/lib/opencpu/site-library") )
 .libPaths()
 options(flycircuit.datadir="/data")
+options(flycircuit.ffdir="/data/ff")
+options(flycircuit.bigmatdir="/data/bigmatrix")
 options(rgl.useNULL=TRUE)
+if (!require("devtools")) install.packages("devtools")
 if (!require("Rcpp")) install.packages("Rcpp",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("igraph")) install.packages("igraph",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("brew")) install.packages("brew",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
@@ -19,7 +22,3 @@ if (!require("jsonlite")) install.packages("jsonlite",repos="http://cran.rstudio
 if (!require("devtools")) install.packages("devtools",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("ggplot2")) install.packages("ggplot2",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("rgl")) install.packages("rgl",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
-devtools::install_github("jefferis/nat", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
-devtools::install_github("jefferis/vfbr", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
-devtools::install_github("jefferis/flycircuit", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
-devtools::install_github("jefferis/flynblastscores", dependencies=TRUE, lib="/usr/local/lib/R/site-library")

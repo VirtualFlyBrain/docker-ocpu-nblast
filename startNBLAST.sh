@@ -10,10 +10,6 @@ cd /
 
 chmod -R 777 /data
 
-Rscript /loadScript.R
-
-chmod -R 777 /data
-
 chmod -R 777 /usr/local/lib/R/site-library
 chmod -R 777 /usr/lib/R/site-library
 

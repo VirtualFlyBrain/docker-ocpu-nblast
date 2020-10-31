@@ -17,6 +17,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 ENV RGL_USE_NULL=TRUE
 ENV R_LIBS_USER=/usr/local/lib/R/site-library/
 ENV R_LIBS=/usr/local/lib/R/site-library/
+ENV LIBARROW_MINIMAL=false
 
 # Install.
 RUN \

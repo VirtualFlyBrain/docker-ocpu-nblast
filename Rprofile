@@ -26,3 +26,4 @@ if (!require("nat")) devtools::install_github("jefferis/nat", dependencies=TRUE,
 if (!require("vfbr")) devtools::install_github("jefferis/vfbr", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("flycircuit")) devtools::install_github("jefferis/flycircuit", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("flynblastscores")) devtools::install_github("jefferis/flynblastscores", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
+devtools::install_github(""VirtualFlyBrain/vfbnblast", dependencies=TRUE, lib="/usr/local/lib/R/site-library")

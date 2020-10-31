@@ -22,3 +22,6 @@ if (!require("jsonlite")) install.packages("jsonlite",repos="http://cran.rstudio
 if (!require("devtools")) install.packages("devtools",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("ggplot2")) install.packages("ggplot2",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("rgl")) install.packages("rgl",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
+if (!require("arrow")) install.packages("arrow",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
+library(arrow)
+install_arrow()

@@ -45,6 +45,8 @@ COPY Rprofile /etc/opencpu/Rprofile
 
 COPY Renviron /etc/opencpu/Renviron
 
+COPY Renviron /home/opencpu/.Renviron
+
 RUN chmod -R 777 /usr/local/lib/R/site-library
 
 COPY loadScript.R /loadScript.R

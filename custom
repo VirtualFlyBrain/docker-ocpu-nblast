@@ -1,0 +1,4 @@
+## This file is to add custom apparmor policy rules.
+## You can add rules if your favorite packages need special privileges.
+
+/usr/local/lib/R/site-library/vfbnblast/data/reduced_matrix.feather rwmix,

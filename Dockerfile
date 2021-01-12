@@ -51,6 +51,8 @@ RUN chmod -R 777 /usr/local/lib/R/site-library
 
 COPY loadScript.R /loadScript.R
 
+COPY custom /etc/apparmor.d/opencpu.d/custom
+
 RUN mkdir /data
 
 RUN chmod -R 777 /data

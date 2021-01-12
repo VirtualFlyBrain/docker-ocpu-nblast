@@ -28,7 +28,7 @@ RUN \
 
 RUN chmod -R 777 /usr/local/lib/R/site-library
 
-RUN dpkg --add-architecture i386 && apt-get -qq -dd update && apt-get -qq install -y software-properties-common wget \
+RUN dpkg --add-architecture i386 && apt-get -qq -dd update && apt-get -qq install -y aptitude; aptitude -q -f install -y software-properties-common wget \
 git gzip tar less curl libcurl4-openssl-dev libxml2-dev libx11-dev freeglut3 freeglut3-dev libglu1-mesa-dev \
 libgl1-mesa-dev xvfb libcairo2-dev libmagick++-dev libpoppler-cpp-dev libwebp-dev libssh2-1-dev libreadline-dev cmtk \
 libblas-dev liblapack-dev tree libudunits2-dev libgdal-dev libgit2-dev

@@ -55,7 +55,7 @@ RUN mkdir /data
 
 RUN chmod -R 777 /data
 
-USER www-data
+USER opencpu
 
 RUN Rscript /loadScript.R || true
 

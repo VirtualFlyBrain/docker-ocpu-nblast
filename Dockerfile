@@ -54,7 +54,7 @@ RUN chmod -R 777 /data
 
 RUN mkdir -p /home/opencpu/.local/share/rpkg-flycircuit/data
 
-RUN chmod -R 777 /home/opencpu/.local
+RUN chmod -R 777 /home/opencpu/.local | true
 
 RUN rm -rvf /usr/local/lib/R/site-library/00LOCK-*
 
@@ -62,9 +62,11 @@ USER opencpu
 
 RUN Rscript /loadScript.R || true
 
+RUN chmod -R 777 /home/opencpu/.local | true
+
 USER root
 
-RUN chmod -R 777 /usr/local/lib/R/site-library
+RUN chmod -R 777 /home/opencpu/.local | true
 
 RUN rm -rvf /usr/local/lib/R/site-library/00LOCK-*
 

@@ -52,6 +52,10 @@ RUN mkdir /data
 
 RUN chmod -R 777 /data
 
+RUN mkdir -p /home/opencpu/.local/share/rpkg-flycircuit/data
+
+RUN chmod -R 777 /home/opencpu/.local
+
 USER opencpu
 
 RUN Rscript /loadScript.R || true

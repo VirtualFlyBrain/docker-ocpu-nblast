@@ -22,3 +22,22 @@ if (!require("jsonlite")) install.packages("jsonlite",repos="http://cran.rstudio
 if (!require("devtools")) install.packages("devtools",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("ggplot2")) install.packages("ggplot2",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("rgl")) install.packages("rgl",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
+if (!require("arrow")) { 
+  install.packages("arrow",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
+  library(arrow)
+  install_arrow()
+}
+# this will install all the regular nat packages
+devtools::source_gist("39a1182f726989db7e03", filename="install_all_nat.R")
+# elmr will bring in all the other packages we need
+devtools::install_github("jefferis/elmr", dependencies=TRUE)
+message("Setting up flycircuit dataset including pre-computed NBLAST scores")
+devtools::source_gist("bbaf5d53353b3944c090", filename = "FlyCircuitStartupNat.R")
+
+message("Downloading flycircuit neurons for de novo NBLAST - this could take 15m to overnight")
+library(flycircuit)
+dps<-read.neuronlistfh("http://flybrain.mrc-lmb.cam.ac.uk/si/nblast/flycircuit/dpscanon.rds",
+    localdir=getOption('flycircuit.datadir'))
+remotesync(dps,download.missing = TRUE)
+devtools::install_github("VirtualFlyBrain/vfbnblast")
+devtools::install_github("Robbie1977/vfbr", ref="patch-2", force=TRUE)

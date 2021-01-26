@@ -1,44 +1,13 @@
 #!/usr/bin/env Rscript
 Sys.setenv(R_REMOTES_NO_ERRORS_FROM_WARNINGS = TRUE)
-.libPaths()
-.libPaths( c( "/usr/local/lib/R/site-library") )
-.libPaths( c( .libPaths(), "/usr/lib/R/library") )
-.libPaths( c( .libPaths(), "/usr/lib/R/site-library") )
-.libPaths( c( .libPaths(), "/usr/local/lib/opencpu/site-library") )
-.libPaths( c( .libPaths(), "/usr/lib/opencpu/library") )
-.libPaths( c( .libPaths(), "/usr/lib/opencpu/site-library") )
-.libPaths()
-options(flycircuit.datadir="/data")
-options(flycircuit.ffdir="/data/ff")
-options(flycircuit.bigmatdir="/data/bigmatrix")
-options(rgl.useNULL=TRUE)
+
 if (!require("devtools")) install.packages("devtools")
-if (!require("Rcpp")) install.packages("Rcpp",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
-if (!require("igraph")) install.packages("igraph",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
-if (!require("brew")) install.packages("brew",repos="http://cran.rstudio.com/", dependencies =FALSE, lib="/usr/local/lib/R/site-library")
-if (!require("git2r")) install.packages("git2r",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
-if (!require("memoise")) install.packages("memoise",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
-if (!require("jsonlite")) install.packages("jsonlite",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
-if (!require("devtools")) install.packages("devtools",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
-if (!require("ggplot2")) install.packages("ggplot2",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
-if (!require("rgl")) install.packages("rgl",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
+
 if (!require("bit64")) install.packages("bit64",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
 if (!require("arrow")) { 
   install.packages("arrow",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
   library(arrow)
   install_arrow()
 }
-# this will install all the regular nat packages
-devtools::source_gist("39a1182f726989db7e03", filename="install_all_nat.R")
-# elmr will bring in all the other packages we need
-devtools::install_github("jefferis/elmr", dependencies=FALSE)
-message("Setting up flycircuit dataset including pre-computed NBLAST scores")
-devtools::source_gist("bbaf5d53353b3944c090", filename = "FlyCircuitStartupNat.R")
 
-message("Downloading flycircuit neurons for de novo NBLAST - this could take 15m to overnight")
-library(flycircuit)
-dps<-read.neuronlistfh("http://flybrain.mrc-lmb.cam.ac.uk/si/nblast/flycircuit/dpscanon.rds",
-    localdir=getOption('flycircuit.datadir'))
-remotesync(dps,download.missing = TRUE)
 devtools::install_github("VirtualFlyBrain/vfbnblast")
-devtools::install_github("Robbie1977/vfbr", ref="patch-2", force=TRUE)

@@ -11,4 +11,4 @@ if (!require("arrow")) {
   install_arrow()
 }
 
-if (!require("vfbnblast")) devtools::install_github("VirtualFlyBrain/vfbnblast")
+if (!require("vfbnblast")) devtools::install_github("VirtualFlyBrain/vfbnblast", dependencies = FALSE, lib="/usr/local/lib/R/site-library", INSTALL_opts = '--no-lock')

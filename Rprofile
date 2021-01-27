@@ -11,4 +11,4 @@ if (!require("arrow")) {
   install_arrow()
 }
 
-if (!require("vfbnblast")) { devtools::install_github("VirtualFlyBrain/vfbnblast", INSTALL_opts = '--no-lock')
+if (!require("vfbnblast")) { devtools::install_github("VirtualFlyBrain/vfbnblast", INSTALL_opts = '--no-lock') }

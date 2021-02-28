@@ -23,6 +23,6 @@ if (!require("devtools")) install.packages("devtools",repos="http://cran.rstudio
 if (!require("ggplot2")) install.packages("ggplot2",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("rgl")) install.packages("rgl",repos="http://cran.rstudio.com/", dependencies = TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("nat")) devtools::install_github("jefferis/nat", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
-if (!require("vfbr")) devtools::install_github("jefferis/vfbr", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
+if (!require("vfbr")) devtools::install_github("Robbie1977/vfbr", ref="patch-2", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("flycircuit")) devtools::install_github("jefferis/flycircuit", dependencies=TRUE, lib="/usr/local/lib/R/site-library")
 if (!require("flynblastscores")) devtools::install_github("jefferis/flynblastscores", dependencies=TRUE, lib="/usr/local/lib/R/site-library")

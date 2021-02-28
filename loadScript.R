@@ -23,11 +23,7 @@ if (!require("devtools")) install.packages("devtools",repos="http://cran.rstudio
 if (!require("ggplot2")) install.packages("ggplot2",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
 if (!require("rgl")) install.packages("rgl",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
 if (!require("bit64")) install.packages("bit64",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
-if (!require("arrow")) { 
-  install.packages("arrow",repos="http://cran.rstudio.com/", dependencies = FALSE, lib="/usr/local/lib/R/site-library")
-  library(arrow)
-  install_arrow()
-}
+
 # this will install all the regular nat packages
 devtools::source_gist("39a1182f726989db7e03", filename="install_all_nat.R")
 # elmr will bring in all the other packages we need
@@ -40,5 +36,4 @@ library(flycircuit)
 dps<-read.neuronlistfh("http://flybrain.mrc-lmb.cam.ac.uk/si/nblast/flycircuit/dpscanon.rds",
     localdir=getOption('flycircuit.datadir'))
 remotesync(dps,download.missing = TRUE)
-devtools::install_github("VirtualFlyBrain/vfbnblast")
-devtools::install_github("Robbie1977/vfbr", ref="patch-2", force=TRUE)
+devtools::install_github("Robbie1977/vfbr", ref="patch-2")
